@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { login } from '../actions/RegisterLoginActions';
+import { CSSTransition } from 'react-transition-group';
 
 
 class Login extends React.Component {
     state={
         user: {
-        username: '',
+        firstname: '',
+        lastname: '',
+        phonenumber: '',
         password: '',
         },
         appearLogin: true
@@ -43,13 +47,28 @@ class Login extends React.Component {
                     <form onSubmit={this.handleSubmit} className="form">
                         <input 
                             onChange={this.handleChanges}
-                            placeholder="username"
-                            name="username"
-                            value={this.state.username}
+                            placeholder="firstname"
+                            name="firstname"
+                            value={this.state.firstname}
                             className="input"
                             required
                         >
-                        </input>
+                        <input 
+                            onChange={this.handleChanges}
+                            placeholder="lastname"
+                            name="lastname"
+                            value={this.state.lastname}
+                            className="input"
+                            required
+                        >
+                        <input 
+                            onChange={this.handleChanges}
+                            placeholder="phone-number"
+                            name="phone-number"
+                            value={this.state.phonenumber}
+                            className="input"
+                            required
+                        >
                         <input
                             onChange={this.handleChanges}
                             placeholder="password"
@@ -58,6 +77,9 @@ class Login extends React.Component {
                             className="input"
                             required
                         >
+                        </input>
+                        </input>
+                        </input>
                         </input>
                         <button className="login-button">Login</button>
                         <p>Don't have an account?</p>

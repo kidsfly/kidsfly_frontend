@@ -7,6 +7,7 @@ import logger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { tripReducer } from './components/reducers';
+import { rootReducer } from './actions/RegisterLoginActions';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(
