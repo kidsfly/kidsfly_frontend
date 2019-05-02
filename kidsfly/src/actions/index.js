@@ -10,7 +10,7 @@ export const ADD_TRIPS_FAIL = 'ADD_TRIPS_FAIL';
 export const getTrips = () => dispatch => {
     dispatch({type: GET_TRIPS_START})
     axios
-    //   .get('http://localhost:333/smurfs')
+      .get('https://kids-fly-backend.herokuapp.com/trips')
       .then(res => {
         dispatch({type: GET_TRIPS_SUCCESS, payload: res.data})
       })
@@ -22,7 +22,7 @@ export const getTrips = () => dispatch => {
   export const addTrip = (newTrip) => dispatch => {
     dispatch({type: ADD_TRIPS_START})
     axios
-    //   .post('http://localhost:3333/smurfs', newTrip)
+      .post('https://kids-fly-backend.herokuapp.com/trips', newTrip)
       .then(res => {
         dispatch({type: ADD_TRIPS_SUCCESS, payload: res.data})
       })

@@ -9,7 +9,7 @@ class UserForm extends React.Component {
             airportName: '',
             airline: '',
             departureTime: '',
-            kidsFlying: ''
+            kidsFlying: '',
         };
     }
 
